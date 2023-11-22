@@ -104,7 +104,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -192,7 +192,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -278,7 +278,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -360,7 +360,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -464,7 +464,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -583,7 +583,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "$datasource",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -716,7 +716,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -805,7 +805,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -890,7 +890,7 @@
             "cacheTimeout": null,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -992,7 +992,7 @@
             "cacheTimeout": null,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1213,7 +1213,7 @@
         "panels": [
           {
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1308,7 +1308,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1394,7 +1394,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1480,7 +1480,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1574,7 +1574,7 @@
         "panels": [
           {
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fontSize": "100%",
             "gridPos": {
               "h": 5,
@@ -1661,7 +1661,7 @@
             "cacheTimeout": null,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fill": 1,
             "gridPos": {
               "h": 5,
@@ -1762,7 +1762,7 @@
           {
             "cacheTimeout": null,
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1845,7 +1845,7 @@
             "cacheTimeout": null,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -1948,7 +1948,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2035,7 +2035,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2122,7 +2122,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2209,7 +2209,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2296,7 +2296,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2398,7 +2398,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2486,7 +2486,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2572,7 +2572,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2658,7 +2658,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2744,7 +2744,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -2830,7 +2830,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -3344,7 +3344,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -3424,7 +3424,7 @@
           {
             "cacheTimeout": null,
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "description": "",
             "fieldConfig": {
               "defaults": {
@@ -3512,7 +3512,7 @@
           {
             "cacheTimeout": null,
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "description": "",
             "fieldConfig": {
               "defaults": {
@@ -3606,7 +3606,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -3692,7 +3692,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fieldConfig": {
               "defaults": {
                 "custom": {}
@@ -3793,7 +3793,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "format": "none",
             "gauge": {
               "maxValue": 100,
@@ -3878,7 +3878,7 @@
               "rgba(237, 129, 40, 0.89)",
               "#d44a3a"
             ],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "format": "none",
             "gauge": {
               "maxValue": 100,
@@ -3957,7 +3957,7 @@
           {
             "cacheTimeout": null,
             "columns": [],
-            "datasource": "$datasource",
+            "datasource": "prometheus",
             "fontSize": "100%",
             "gridPos": {
               "h": 8,
@@ -4033,7 +4033,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "$datasource",
+          "datasource": "prometheus",
           "definition": "label_values(kube_node_info, cluster)",
           "error": null,
           "hide": 0,
@@ -4056,7 +4056,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "$datasource",
+          "datasource": "prometheus",
           "definition": "label_values(kube_node_info{cluster=~\"$cluster\"}, node)",
           "error": null,
           "hide": 0,
@@ -4079,7 +4079,7 @@
         {
           "allValue": "",
           "current": {},
-          "datasource": "$datasource",
+          "datasource": "prometheus",
           "definition": "",
           "error": null,
           "hide": 0,
