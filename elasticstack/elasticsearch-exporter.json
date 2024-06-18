@@ -169,7 +169,6 @@
         "y": 1
       },
       "id": 53,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
@@ -183,16 +182,18 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
           "editorMode": "code",
-          "expr": "elasticsearch_cluster_health_status{elastic_cluster=\"$cluster\",color=\"red\"}==1 or (elasticsearch_cluster_health_status{elastic_cluster=\"$cluster\",color=\"green\"}==1)+4 or (elasticsearch_cluster_health_status{elastic_cluster=\"$cluster\",color=\"yellow\"}==1)+22",
+          "expr": "elasticsearch_cluster_health_status{container=\"$cluster\",color=\"red\"}==1 or (elasticsearch_cluster_health_status{container=\"$cluster\",color=\"green\"}==1)+4 or (elasticsearch_cluster_health_status{container=\"$cluster\",color=\"yellow\"}==1)+22",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -266,7 +267,6 @@
         "y": 1
       },
       "id": 81,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
@@ -280,15 +280,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "count(elasticsearch_breakers_tripped{elastic_cluster=\"$cluster\"}>0)",
+          "expr": "count(elasticsearch_breakers_tripped{container=\"$cluster\"}>0)",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -347,7 +349,6 @@
         "y": 1
       },
       "id": 51,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
@@ -361,15 +362,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_process_cpu_percent{elastic_cluster=\"$cluster\"} ) / count (elasticsearch_process_cpu_percent{elastic_cluster=\"$cluster\"} )",
+          "expr": "sum (elasticsearch_process_cpu_percent{container=\"$cluster\"} ) / count (elasticsearch_process_cpu_percent{container=\"$cluster\"} )",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -431,7 +434,6 @@
         "y": 1
       },
       "id": 50,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
@@ -445,15 +447,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_jvm_memory_used_bytes{elastic_cluster=\"$cluster\"}) / sum (elasticsearch_jvm_memory_max_bytes{elastic_cluster=\"$cluster\"}) * 100",
+          "expr": "sum (elasticsearch_jvm_memory_used_bytes{container=\"$cluster\"}) / sum (elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}) * 100",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -512,7 +516,6 @@
         "y": 1
       },
       "id": 10,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -526,15 +529,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_nodes{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_nodes{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -593,7 +598,6 @@
         "y": 1
       },
       "id": 9,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -607,15 +611,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_data_nodes{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_data_nodes{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -679,7 +685,6 @@
       },
       "hideTimeOverride": true,
       "id": 16,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
@@ -693,15 +698,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_pending_tasks{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_pending_tasks{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -749,7 +756,6 @@
         "y": 1
       },
       "id": 89,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -763,15 +769,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_process_open_files_count{elastic_cluster=\"$cluster\"})",
+          "expr": "sum (elasticsearch_process_open_files_count{container=\"$cluster\"})",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -857,7 +865,6 @@
         "y": 5
       },
       "id": 11,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -871,16 +878,18 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "repeat": "shard_type",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_active_primary_shards{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_active_primary_shards{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -938,7 +947,6 @@
         "y": 5
       },
       "id": 39,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -952,15 +960,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_active_shards{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_active_shards{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1018,7 +1028,6 @@
         "y": 5
       },
       "id": 40,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1032,15 +1041,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_initializing_shards{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_initializing_shards{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -1099,7 +1110,6 @@
         "y": 5
       },
       "id": 41,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1113,15 +1123,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_relocating_shards{elastic_cluster=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_relocating_shards{container=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1179,7 +1191,6 @@
         "y": 5
       },
       "id": 42,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1193,15 +1204,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_delayed_unassigned_shards{elastic_cluster=\"$cluster\"} ",
+          "expr": "elasticsearch_cluster_health_delayed_unassigned_shards{container=\"$cluster\"} ",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1259,7 +1272,6 @@
         "y": 5
       },
       "id": 82,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1273,15 +1285,17 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_unassigned_shards{elastic_cluster=\"$cluster\"} ",
+          "expr": "elasticsearch_cluster_health_unassigned_shards{container=\"$cluster\"} ",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1308,66 +1322,98 @@
       "id": 92,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
             "uid": "$datasource"
           },
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "fillGradient": 0,
-          "grid": {},
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "GCs",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 11,
             "w": 12,
             "x": 0,
             "y": 9
           },
-          "height": "400",
-          "hiddenSeries": false,
           "id": 7,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": false,
-            "hideZero": false,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "avg",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "maxHeight": 600,
+              "mode": "multi",
+              "sort": "desc"
+            }
           },
-          "percentage": false,
           "pluginVersion": "9.1.6",
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_count{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_count{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1378,99 +1424,102 @@
               "step": 10
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "GC count",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "GCs",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
             "uid": "$datasource"
           },
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "fillGradient": 0,
-          "grid": {},
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "Time",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 11,
             "w": 12,
             "x": 12,
             "y": 9
           },
-          "height": "400",
-          "hiddenSeries": false,
           "id": 27,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": false,
-            "hideZero": false,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "avg",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "maxHeight": 600,
+              "mode": "multi",
+              "sort": "desc"
+            }
           },
-          "percentage": false,
           "pluginVersion": "9.1.6",
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1481,37 +1530,8 @@
               "step": 10
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "GC time",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "s",
-              "label": "Time",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         }
       ],
       "targets": [
@@ -1592,7 +1612,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_translog_operations{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_translog_operations{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1683,7 +1703,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_translog_size_in_bytes{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_translog_size_in_bytes{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1799,7 +1819,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_tripped{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_tripped{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{breaker}}",
@@ -1886,7 +1906,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_estimated_size_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_estimated_size_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{breaker}}",
@@ -1896,7 +1916,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_limit_size_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_limit_size_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: limit for {{breaker}}",
@@ -2018,7 +2038,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load1{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_os_load1{container=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2032,7 +2052,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load5{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_os_load5{container=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2046,7 +2066,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load15{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_os_load15{container=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2149,7 +2169,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_process_cpu_percent{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_process_cpu_percent{container=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2252,7 +2272,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_used_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_used_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -2265,7 +2285,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_max_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} max: {{area}}",
@@ -2276,7 +2296,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_pool_peak_used_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_pool_peak_used_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} peak used pool: {{pool}}",
@@ -2375,7 +2395,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_committed_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_committed_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} committed: {{area}}",
@@ -2386,7 +2406,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_max_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} max: {{area}}",
@@ -2441,7 +2461,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": {
         "type": "datasource",
         "uid": "grafana"
@@ -2453,247 +2473,7 @@
         "y": 12
       },
       "id": 96,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": {
-            "uid": "$datasource"
-          },
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "fillGradient": 0,
-          "grid": {},
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 13
-          },
-          "height": "400",
-          "hiddenSeries": false,
-          "id": 32,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": false,
-            "hideZero": false,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "current",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "9.1.6",
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "datasource": {
-                "uid": "$datasource"
-              },
-              "expr": "1-(elasticsearch_filesystem_data_available_bytes{elastic_cluster=\"$cluster\"}/elasticsearch_filesystem_data_size_bytes{elastic_cluster=\"$cluster\"})",
-              "format": "time_series",
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "{{name}}: {{path}}",
-              "metric": "",
-              "refId": "A",
-              "step": 20
-            }
-          ],
-          "thresholds": [
-            {
-              "colorMode": "custom",
-              "fill": true,
-              "fillColor": "rgba(216, 200, 27, 0.27)",
-              "op": "gt",
-              "value": 0.8
-            },
-            {
-              "colorMode": "custom",
-              "fill": true,
-              "fillColor": "rgba(234, 112, 112, 0.22)",
-              "op": "gt",
-              "value": 0.9
-            }
-          ],
-          "timeRegions": [],
-          "title": "Disk usage",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percentunit",
-              "label": "Disk Usage %",
-              "logBase": 1,
-              "max": 1,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$datasource"
-          },
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "fillGradient": 0,
-          "grid": {},
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 12,
-            "y": 13
-          },
-          "height": "400",
-          "hiddenSeries": false,
-          "id": 47,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": false,
-            "hideZero": false,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "avg",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "9.1.6",
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "sent",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "datasource": {
-                "uid": "$datasource"
-              },
-              "editorMode": "code",
-              "expr": "irate(elasticsearch_transport_tx_size_bytes_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "1m",
-              "intervalFactor": 2,
-              "legendFormat": "{{name}}: sent ",
-              "range": true,
-              "refId": "D",
-              "step": 20
-            },
-            {
-              "datasource": {
-                "uid": "$datasource"
-              },
-              "editorMode": "code",
-              "expr": "-irate(elasticsearch_transport_rx_size_bytes_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "1m",
-              "intervalFactor": 2,
-              "legendFormat": "{{name}}: received",
-              "range": true,
-              "refId": "C",
-              "step": 20
-            }
-          ],
-          "thresholds": [],
-          "timeRegions": [],
-          "title": "Network usage",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "Bps",
-              "label": "Bytes/sec",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "pps",
-              "label": "",
-              "logBase": 1,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      ],
+      "panels": [],
       "targets": [
         {
           "datasource": {
@@ -2707,6 +2487,247 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Disk Usage %",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "rgba(216, 200, 27, 0.27)",
+                "value": 0.8
+              },
+              {
+                "color": "rgba(234, 112, 112, 0.22)",
+                "value": 0.9
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 0,
+        "y": 13
+      },
+      "id": 32,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "1-(elasticsearch_filesystem_data_available_bytes{container=\"$cluster\"}/elasticsearch_filesystem_data_size_bytes{container=\"$cluster\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{name}}: {{path}}",
+          "metric": "",
+          "refId": "A",
+          "step": 20
+        }
+      ],
+      "title": "Disk usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Bytes/sec",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sent"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 12,
+        "y": 13
+      },
+      "id": 47,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "editorMode": "code",
+          "expr": "irate(elasticsearch_transport_tx_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
+          "format": "time_series",
+          "interval": "1m",
+          "intervalFactor": 2,
+          "legendFormat": "{{name}}: sent ",
+          "range": true,
+          "refId": "D",
+          "step": 20
+        },
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "editorMode": "code",
+          "expr": "-irate(elasticsearch_transport_rx_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
+          "format": "time_series",
+          "interval": "1m",
+          "intervalFactor": 2,
+          "legendFormat": "{{name}}: received",
+          "range": true,
+          "refId": "C",
+          "step": 20
+        }
+      ],
+      "title": "Network usage",
+      "type": "timeseries"
+    },
+    {
       "collapsed": true,
       "datasource": {
         "type": "datasource",
@@ -2716,7 +2737,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 24
       },
       "id": 97,
       "panels": [
@@ -2779,7 +2800,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_docs{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_docs{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -2880,7 +2901,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_total{elastic_cluster=\"$cluster\"}[$__interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_total{container=\"$cluster\"}[$__interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -2984,7 +3005,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_docs_deleted{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_docs_deleted{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3086,7 +3107,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_merges_docs_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_merges_docs_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3188,7 +3209,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_size_bytes_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3254,7 +3275,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 25
       },
       "id": 98,
       "panels": [
@@ -3316,7 +3337,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_query_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval]) ",
+              "expr": "irate(elasticsearch_indices_search_query_time_seconds{container=\"$cluster\"}[$__rate_interval]) ",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3417,7 +3438,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3520,7 +3541,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3623,7 +3644,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_store_throttle_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_store_throttle_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3689,7 +3710,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 26
       },
       "id": 99,
       "panels": [
@@ -3753,7 +3774,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_indexing_index_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_indexing_index_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3768,7 +3789,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_search_query_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_search_query_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3782,7 +3803,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_search_fetch_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_search_fetch_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3796,7 +3817,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_merges_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_merges_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3810,7 +3831,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_refresh_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_refresh_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3824,7 +3845,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_flush_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_flush_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3838,7 +3859,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_exists_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_exists_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3852,7 +3873,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_missing_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_missing_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3866,7 +3887,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_tota{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_tota{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3880,7 +3901,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_indexing_delete_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_indexing_delete_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3982,7 +4003,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3997,7 +4018,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_query_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_search_query_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4011,7 +4032,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_fetch_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_search_fetch_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4025,7 +4046,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4039,7 +4060,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_refresh_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_refresh_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4053,7 +4074,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_flush_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_flush_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4067,7 +4088,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_exists_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_exists_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4081,7 +4102,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4095,7 +4116,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_missing_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_missing_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4109,7 +4130,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_delete_time_seconds_total{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_delete_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4123,7 +4144,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_time_seconds{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_time_seconds{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4188,7 +4209,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 27
       },
       "id": 100,
       "panels": [
@@ -4246,7 +4267,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_thread_pool_rejected_count{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_thread_pool_rejected_count{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4341,7 +4362,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_thread_pool_active_count{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_thread_pool_active_count{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{ type }}",
@@ -4435,7 +4456,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_thread_pool_active_count{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_thread_pool_active_count{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{ type }}",
@@ -4530,7 +4551,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_thread_pool_completed_count{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_thread_pool_completed_count{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4594,7 +4615,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 28
       },
       "id": 101,
       "panels": [
@@ -4656,7 +4677,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_fielddata_memory_size_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_fielddata_memory_size_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -4758,7 +4779,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_fielddata_evictions{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_fielddata_evictions{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4859,7 +4880,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_query_cache_memory_size_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_query_cache_memory_size_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -4961,7 +4982,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_query_cache_evictions{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_query_cache_evictions{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5064,7 +5085,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_filter_cache_evictions{elastic_cluster=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_filter_cache_evictions{container=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5130,7 +5151,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 29
       },
       "id": 102,
       "panels": [
@@ -5186,7 +5207,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segments_count{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segments_count{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -5275,7 +5296,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segments_memory_bytes{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segments_memory_bytes{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -5335,7 +5356,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 30
       },
       "id": 103,
       "panels": [
@@ -5393,7 +5414,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "elasticsearch_indices_docs_primary{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_docs_primary{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5484,7 +5505,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_store_size_bytes_primary{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_store_size_bytes_primary{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -5574,7 +5595,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_store_size_bytes_total{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_store_size_bytes_total{container=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -5635,7 +5656,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 31
       },
       "id": 106,
       "panels": [
@@ -5693,7 +5714,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_primary{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_primary{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -5783,7 +5804,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_total{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_total{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -5843,7 +5864,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 32
       },
       "id": 107,
       "panels": [
@@ -5905,7 +5926,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_fields_memory_bytes_primary{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_fields_memory_bytes_primary{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -6000,7 +6021,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_fields_memory_bytes_total{elastic_cluster=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_fields_memory_bytes_total{container=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -6052,8 +6073,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 37,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [
     "elasticsearch",
     "App"
@@ -6063,7 +6083,7 @@
       {
         "current": {
           "selected": false,
-          "text": "prometheus",
+          "text": "Prometheus",
           "value": "prometheus"
         },
         "hide": 0,
@@ -6080,22 +6100,23 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "elasticsearch-datajuri",
           "value": "elasticsearch-datajuri"
         },
         "datasource": {
           "uid": "$datasource"
         },
-        "definition": "label_values(elasticsearch_cluster_health_status, elastic_cluster)",
+        "definition": "label_values(elasticsearch_cluster_health_status,container)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "cluster",
         "options": [],
         "query": {
-          "query": "label_values(elasticsearch_cluster_health_status, elastic_cluster)",
-          "refId": "StandardVariableQuery"
+          "qryType": 1,
+          "query": "label_values(elasticsearch_cluster_health_status,container)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -6112,6 +6133,7 @@
     "from": "now-30m",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "5s",
@@ -6140,6 +6162,6 @@
   "timezone": "browser",
   "title": "Elasticsearch Exporter Quickstart and Dashboard",
   "uid": "4yyL6dBMk",
-  "version": 2,
+  "version": 6,
   "weekStart": ""
 }
