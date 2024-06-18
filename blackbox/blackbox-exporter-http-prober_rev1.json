@@ -26,13 +26,14 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 13659,
   "graphTooltip": 0,
+  "id": 11,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P1809F7CD0C75ACF3"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -42,7 +43,9 @@
           },
           "custom": {
             "align": "left",
-            "displayMode": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
             "filterable": true,
             "inspect": false
           },
@@ -110,8 +113,11 @@
                 "value": false
               },
               {
-                "id": "custom.displayMode",
-                "value": "basic"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "gauge"
+                }
               }
             ]
           },
@@ -158,8 +164,11 @@
                 "value": 76
               },
               {
-                "id": "custom.displayMode",
-                "value": "color-background"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
               }
             ]
           },
@@ -211,8 +220,11 @@
                 "value": 78
               },
               {
-                "id": "custom.displayMode",
-                "value": "color-background"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
               }
             ]
           },
@@ -263,8 +275,11 @@
                 "value": 77
               },
               {
-                "id": "custom.displayMode",
-                "value": "color-background"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
               }
             ]
           },
@@ -307,8 +322,11 @@
                 "value": 3
               },
               {
-                "id": "custom.displayMode",
-                "value": "basic"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "gauge"
+                }
               }
             ]
           },
@@ -351,8 +369,11 @@
                 "value": 3
               },
               {
-                "id": "custom.displayMode",
-                "value": "basic"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "gauge"
+                }
               }
             ]
           },
@@ -417,15 +438,16 @@
           }
         ]
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "11.0.0",
       "repeatDirection": "h",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "probe_success{job=~\"$job\", instance=~\"$instance\"}",
+          "editorMode": "code",
+          "expr": "probe_success{job=~\"$customer\", instance=~\"$url\"}",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -435,9 +457,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "probe_http_ssl{job=~\"$job\", instance=~\"$instance\"} > 0",
+          "editorMode": "code",
+          "expr": "probe_http_ssl{customer=~\"$customer\", instance=~\"$url\"} > 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -447,9 +470,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "(probe_ssl_earliest_cert_expiry{job=~\"$job\", instance=~\"$instance\"} - time()) / 3600 / 24",
+          "editorMode": "code",
+          "expr": "(probe_ssl_earliest_cert_expiry{job=~\"$customer\", instance=~\"$url\"} - time()) / 3600 / 24",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -459,9 +483,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "probe_http_status_code{job=~\"$job\", instance=~\"$instance\"} > 0",
+          "editorMode": "code",
+          "expr": "probe_http_status_code{job=~\"$customer\", instance=~\"$url\"} > 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -471,9 +496,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "avg_over_time(probe_duration_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])",
+          "editorMode": "code",
+          "expr": "avg_over_time(probe_duration_seconds{job=~\"$customer\", instance=~\"$url\"}[1m])",
           "format": "table",
           "hide": false,
           "instant": false,
@@ -485,9 +511,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "probe_tls_version_info{job=~\"$job\", instance=~\"$instance\"}",
+          "editorMode": "code",
+          "expr": "probe_tls_version_info{job=~\"$customer\", instance=~\"$url\"}",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -497,9 +524,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "${datasource}"
           },
-          "expr": "avg_over_time(probe_dns_lookup_time_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])",
+          "editorMode": "code",
+          "expr": "avg_over_time(probe_dns_lookup_time_seconds{job=~\"$customer\", instance=~\"$url\"}[1m])",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -531,7 +559,10 @@
               "Value": false,
               "Value #A": false,
               "Value #B": false,
+              "Value #D": false,
+              "Value #E": true,
               "Value #F": true,
+              "Value #G": true,
               "__name__": true,
               "__name__ 1": true,
               "__name__ 2": true,
@@ -540,13 +571,13 @@
               "__name__ 5": true,
               "__name__ 6": true,
               "__name__ 7": true,
-              "customer 1": true,
+              "customer 1": false,
               "customer 2": true,
               "customer 3": true,
               "customer 4": true,
               "customer 5": true,
               "customer 6": true,
-              "environment 1": true,
+              "environment 1": false,
               "environment 2": true,
               "environment 3": true,
               "environment 4": true,
@@ -562,6 +593,18 @@
               "job 7": true,
               "job 8": true,
               "phase": true,
+              "prometheus 1": true,
+              "prometheus 2": true,
+              "prometheus 3": true,
+              "prometheus 4": true,
+              "prometheus 5": true,
+              "prometheus 6": true,
+              "prometheus_replica 1": true,
+              "prometheus_replica 2": true,
+              "prometheus_replica 3": true,
+              "prometheus_replica 4": true,
+              "prometheus_replica 5": true,
+              "prometheus_replica 6": true,
               "type": true,
               "type 1": true,
               "type 2": true,
@@ -573,6 +616,7 @@
               "type 8": true,
               "version": false
             },
+            "includeByName": {},
             "indexByName": {
               "Time 1": 9,
               "Time 2": 13,
@@ -631,58 +675,99 @@
       "type": "table"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P1809F7CD0C75ACF3"
+        "uid": "prometheus"
       },
       "description": "Returns how long the probe took to complete in seconds",
-      "fill": 0,
-      "fillGradient": 0,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 9,
         "w": 24,
         "x": 0,
         "y": 9
       },
-      "hiddenSeries": false,
       "id": 4,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "9.1.6",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "P1809F7CD0C75ACF3"
           },
-          "expr": "sum(probe_http_duration_seconds{job=~\"$job\", instance=~\"$instance\"}) by (instance)",
+          "editorMode": "code",
+          "expr": "sum(probe_http_duration_seconds{job=~\"$customer\", instance=~\"$url\"}) by (instance)",
           "instant": false,
           "interval": "",
           "intervalFactor": 2,
@@ -690,36 +775,8 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "HTTP Probe Duration",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "s",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": 0
-      }
+      "type": "timeseries"
     },
     {
       "collapsed": true,
@@ -847,8 +904,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 37,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [
     "blackbox",
     "prometheus"
@@ -856,38 +912,53 @@
   "templating": {
     "list": [
       {
-        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "Thanos",
+          "value": "P5DCFC7561CCDE821"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
         "current": {
           "selected": true,
-          "text": "All",
-          "value": "$__all"
+          "text": "Woba",
+          "value": "Woba"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "P1809F7CD0C75ACF3"
+          "uid": "${datasource}"
         },
-        "definition": "label_values(probe_success, job)",
+        "definition": "label_values(probe_success,job)",
         "hide": 0,
-        "includeAll": true,
-        "label": "Job",
+        "includeAll": false,
+        "label": "Customer",
         "multi": false,
-        "name": "job",
+        "name": "customer",
         "options": [],
         "query": {
-          "query": "label_values(probe_success, job)",
-          "refId": "StandardVariableQuery"
+          "qryType": 1,
+          "query": "label_values(probe_success,job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
-        "regex": "^(?!.*Customer Prospect*).*$",
+        "regex": "",
         "skipUrlSync": false,
-        "sort": 2,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "sort": 0,
+        "type": "query"
       },
       {
-        "allValue": ".+",
         "current": {
           "selected": false,
           "text": "All",
@@ -895,27 +966,25 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "P1809F7CD0C75ACF3"
+          "uid": "${datasource}"
         },
-        "definition": "label_values(probe_success{job=~\"$job\"}, instance)",
+        "definition": "label_values(probe_success{job=~\"$customer\"},instance)",
         "hide": 0,
         "includeAll": true,
-        "label": "Instance",
+        "label": "URL",
         "multi": false,
-        "name": "instance",
+        "name": "url",
         "options": [],
         "query": {
-          "query": "label_values(probe_success{job=~\"$job\"}, instance)",
-          "refId": "prometheus-instance-Variable-Query"
+          "qryType": 1,
+          "query": "label_values(probe_success{job=~\"$customer\"},instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 2,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -923,10 +992,11 @@
     "from": "now-6h",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {},
   "timezone": "",
   "title": "Blackbox Exporter (HTTP prober)",
   "uid": "NEzutrbMk",
-  "version": 3,
+  "version": 11,
   "weekStart": ""
 }
