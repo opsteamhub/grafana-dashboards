@@ -193,7 +193,7 @@
             "uid": "$datasource"
           },
           "editorMode": "code",
-          "expr": "elasticsearch_cluster_health_status{container=\"$cluster\",color=\"red\"}==1 or (elasticsearch_cluster_health_status{container=\"$cluster\",color=\"green\"}==1)+4 or (elasticsearch_cluster_health_status{container=\"$cluster\",color=\"yellow\"}==1)+22",
+          "expr": "elasticsearch_cluster_health_status{job=\"$cluster\",color=\"red\"}==1 or (elasticsearch_cluster_health_status{job=\"$cluster\",color=\"green\"}==1)+4 or (elasticsearch_cluster_health_status{job=\"$cluster\",color=\"yellow\"}==1)+22",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -290,7 +290,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "count(elasticsearch_breakers_tripped{container=\"$cluster\"}>0)",
+          "expr": "count(elasticsearch_breakers_tripped{job=\"$cluster\"}>0)",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -372,7 +372,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_process_cpu_percent{container=\"$cluster\"} ) / count (elasticsearch_process_cpu_percent{container=\"$cluster\"} )",
+          "expr": "sum (elasticsearch_process_cpu_percent{job=\"$cluster\"} ) / count (elasticsearch_process_cpu_percent{job=\"$cluster\"} )",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -457,7 +457,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_jvm_memory_used_bytes{container=\"$cluster\"}) / sum (elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}) * 100",
+          "expr": "sum (elasticsearch_jvm_memory_used_bytes{job=\"$cluster\"}) / sum (elasticsearch_jvm_memory_max_bytes{job=\"$cluster\"}) * 100",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -539,7 +539,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_nodes{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_nodes{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -621,7 +621,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_data_nodes{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_data_nodes{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -708,7 +708,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_number_of_pending_tasks{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_number_of_pending_tasks{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -779,7 +779,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "sum (elasticsearch_process_open_files_count{container=\"$cluster\"})",
+          "expr": "sum (elasticsearch_process_open_files_count{job=\"$cluster\"})",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -889,7 +889,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_active_primary_shards{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_active_primary_shards{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -970,7 +970,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_active_shards{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_active_shards{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1051,7 +1051,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_initializing_shards{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_initializing_shards{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -1133,7 +1133,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_relocating_shards{container=\"$cluster\"}",
+          "expr": "elasticsearch_cluster_health_relocating_shards{job=\"$cluster\"}",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1214,7 +1214,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_delayed_unassigned_shards{container=\"$cluster\"} ",
+          "expr": "elasticsearch_cluster_health_delayed_unassigned_shards{job=\"$cluster\"} ",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1295,7 +1295,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "elasticsearch_cluster_health_unassigned_shards{container=\"$cluster\"} ",
+          "expr": "elasticsearch_cluster_health_unassigned_shards{job=\"$cluster\"} ",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 2,
@@ -1368,8 +1368,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1413,7 +1412,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_count{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_count{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1474,8 +1473,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1519,7 +1517,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1612,7 +1610,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_translog_operations{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_translog_operations{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1703,7 +1701,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_translog_size_in_bytes{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_translog_size_in_bytes{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -1819,7 +1817,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_tripped{container=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_tripped{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{breaker}}",
@@ -1906,7 +1904,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_estimated_size_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_estimated_size_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{breaker}}",
@@ -1916,7 +1914,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_breakers_limit_size_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_breakers_limit_size_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: limit for {{breaker}}",
@@ -2038,7 +2036,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load1{container=\"$cluster\"}",
+              "expr": "elasticsearch_os_load1{job=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2052,7 +2050,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load5{container=\"$cluster\"}",
+              "expr": "elasticsearch_os_load5{job=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2066,7 +2064,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_os_load15{container=\"$cluster\"}",
+              "expr": "elasticsearch_os_load15{job=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2169,7 +2167,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_process_cpu_percent{container=\"$cluster\"}",
+              "expr": "elasticsearch_process_cpu_percent{job=\"$cluster\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -2272,7 +2270,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_used_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_used_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -2285,7 +2283,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_max_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} max: {{area}}",
@@ -2296,7 +2294,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_pool_peak_used_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_pool_peak_used_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} peak used pool: {{pool}}",
@@ -2395,7 +2393,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_committed_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_committed_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} committed: {{area}}",
@@ -2406,7 +2404,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_jvm_memory_max_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_jvm_memory_max_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}} max: {{area}}",
@@ -2582,7 +2580,7 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "1-(elasticsearch_filesystem_data_available_bytes{container=\"$cluster\"}/elasticsearch_filesystem_data_size_bytes{container=\"$cluster\"})",
+          "expr": "1-(elasticsearch_filesystem_data_available_bytes{job=\"$cluster\"}/elasticsearch_filesystem_data_size_bytes{job=\"$cluster\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -2700,7 +2698,7 @@
             "uid": "$datasource"
           },
           "editorMode": "code",
-          "expr": "irate(elasticsearch_transport_tx_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
+          "expr": "irate(elasticsearch_transport_tx_size_bytes_total{job=\"$cluster\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -2714,7 +2712,7 @@
             "uid": "$datasource"
           },
           "editorMode": "code",
-          "expr": "-irate(elasticsearch_transport_rx_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
+          "expr": "-irate(elasticsearch_transport_rx_size_bytes_total{job=\"$cluster\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -2800,7 +2798,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_docs{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_docs{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -2901,7 +2899,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_total{container=\"$cluster\"}[$__interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_total{job=\"$cluster\"}[$__interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3005,7 +3003,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_docs_deleted{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_docs_deleted{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3107,7 +3105,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_merges_docs_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_merges_docs_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3209,7 +3207,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_size_bytes_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_size_bytes_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3337,7 +3335,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_query_time_seconds{container=\"$cluster\"}[$__rate_interval]) ",
+              "expr": "irate(elasticsearch_indices_search_query_time_seconds{job=\"$cluster\"}[$__rate_interval]) ",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3438,7 +3436,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3541,7 +3539,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3644,7 +3642,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_store_throttle_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_store_throttle_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3774,7 +3772,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_indexing_index_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_indexing_index_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3789,7 +3787,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_search_query_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_search_query_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3803,7 +3801,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_search_fetch_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_search_fetch_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3817,7 +3815,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_merges_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_merges_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3831,7 +3829,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_refresh_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_refresh_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3845,7 +3843,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_flush_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_flush_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3859,7 +3857,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_exists_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_exists_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3873,7 +3871,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_missing_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_missing_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3887,7 +3885,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_get_tota{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_get_tota{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -3901,7 +3899,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_indexing_delete_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_indexing_delete_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4003,7 +4001,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_index_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4018,7 +4016,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_query_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_search_query_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4032,7 +4030,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_search_fetch_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_search_fetch_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4046,7 +4044,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_merges_total_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4060,7 +4058,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_refresh_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_refresh_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4074,7 +4072,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_flush_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_flush_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4088,7 +4086,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_exists_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_exists_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4102,7 +4100,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4116,7 +4114,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_missing_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_missing_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4130,7 +4128,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_indexing_delete_time_seconds_total{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_indexing_delete_time_seconds_total{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4144,7 +4142,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_indices_get_time_seconds{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_indices_get_time_seconds{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4267,7 +4265,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_thread_pool_rejected_count{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_thread_pool_rejected_count{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4362,7 +4360,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_thread_pool_active_count{container=\"$cluster\"}",
+              "expr": "elasticsearch_thread_pool_active_count{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{ type }}",
@@ -4456,7 +4454,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_thread_pool_active_count{container=\"$cluster\"}",
+              "expr": "elasticsearch_thread_pool_active_count{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}: {{ type }}",
@@ -4551,7 +4549,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "irate(elasticsearch_thread_pool_completed_count{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "irate(elasticsearch_thread_pool_completed_count{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4677,7 +4675,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_fielddata_memory_size_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_fielddata_memory_size_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -4779,7 +4777,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_fielddata_evictions{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_fielddata_evictions{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -4880,7 +4878,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_query_cache_memory_size_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_query_cache_memory_size_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -4982,7 +4980,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_query_cache_evictions{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_query_cache_evictions{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5085,7 +5083,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "rate(elasticsearch_indices_filter_cache_evictions{container=\"$cluster\"}[$__rate_interval])",
+              "expr": "rate(elasticsearch_indices_filter_cache_evictions{job=\"$cluster\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5207,7 +5205,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segments_count{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segments_count{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -5296,7 +5294,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segments_memory_bytes{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segments_memory_bytes{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -5414,7 +5412,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "elasticsearch_indices_docs_primary{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_docs_primary{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "1m",
               "intervalFactor": 2,
@@ -5505,7 +5503,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_store_size_bytes_primary{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_store_size_bytes_primary{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -5595,7 +5593,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_store_size_bytes_total{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_store_size_bytes_total{job=\"$cluster\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -5714,7 +5712,7 @@
                 "uid": "$datasource"
               },
               "editorMode": "code",
-              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_primary{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_primary{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -5804,7 +5802,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_total{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_doc_values_memory_bytes_total{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -5926,7 +5924,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_fields_memory_bytes_primary{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_fields_memory_bytes_primary{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -6021,7 +6019,7 @@
               "datasource": {
                 "uid": "$datasource"
               },
-              "expr": "elasticsearch_indices_segment_fields_memory_bytes_total{container=\"$cluster\"}",
+              "expr": "elasticsearch_indices_segment_fields_memory_bytes_total{job=\"$cluster\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{index}}",
@@ -6100,14 +6098,14 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "elasticsearch-datajuri",
-          "value": "elasticsearch-datajuri"
+          "selected": true,
+          "text": "elasticsearch-woba-staging",
+          "value": "elasticsearch-woba-staging"
         },
         "datasource": {
           "uid": "$datasource"
         },
-        "definition": "label_values(elasticsearch_cluster_health_status,container)",
+        "definition": "label_values(elasticsearch_cluster_health_status,job)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -6115,7 +6113,7 @@
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(elasticsearch_cluster_health_status,container)",
+          "query": "label_values(elasticsearch_cluster_health_status,job)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -6162,6 +6160,6 @@
   "timezone": "browser",
   "title": "Elasticsearch Exporter Quickstart and Dashboard",
   "uid": "4yyL6dBMk",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }
